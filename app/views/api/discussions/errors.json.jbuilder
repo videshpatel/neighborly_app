@@ -1,0 +1,1 @@
+json.errors @discussions.errors.full_messages

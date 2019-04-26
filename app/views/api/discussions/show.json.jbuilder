@@ -1,0 +1,1 @@
+json.partial! "discussion.json.jbuilder", discussion: @discussion
