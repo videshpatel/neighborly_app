@@ -1,0 +1,1 @@
+json.partial! "channel.json.jbuilder", channel: @channel

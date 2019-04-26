@@ -4,27 +4,9 @@ class Api::DiscussionsController < ApplicationController
 
  #everyone
   def index
-    # if params[:search]
-    #   @discussions = Discussion.where("title LIKE ?", "%#{params[:search]}%")
-    # else
+
     @discussions = Discussion.all
-    # end
 
-    # if params[:discount] == "true"
-    #   # do a thing
-    #   @discussions = @discussions.where("content < ?", 5)
-    # end
-
-    # if params[:sort] && params[:sort_order]
-    #   @discussions = @discussions.order(params[:sort] => params[:sort_order])
-    # end
-
-    # if params[:category]
-    #   # find the category
-    #   category = Category.find_by(title: params[:category])
-    #   # find all the discussions based on the category
-    #   @discussions = category.discussions
-    # end
     
     render 'index.json.jbuilder'
   end 

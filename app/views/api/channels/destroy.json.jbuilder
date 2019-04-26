@@ -1,0 +1,1 @@
+json.message "The channel is deleted from the database."
