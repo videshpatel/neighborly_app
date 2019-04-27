@@ -14,5 +14,10 @@ Rails.application.routes.draw do
     post '/channels' => 'channels#create'
     patch '/channels/:id' => 'channels#update'
     delete '/channels/:id' => 'channels#destroy'
+
+    get 'replies' => 'replies#index'
+    post '/replies' => 'replies#create'
+    patch '/replies/:id' => 'replies#update'
+    delete '/replies/:id' => 'replies#destroy'
   end
 end

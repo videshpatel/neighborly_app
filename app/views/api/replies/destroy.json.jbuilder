@@ -1,0 +1,1 @@
+json.message "The reply is deleted from the database."
