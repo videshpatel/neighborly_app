@@ -19,5 +19,8 @@ Rails.application.routes.draw do
     post '/replies' => 'replies#create'
     patch '/replies/:id' => 'replies#update'
     delete '/replies/:id' => 'replies#destroy'
+
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
   end
 end
