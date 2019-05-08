@@ -4,10 +4,21 @@ class Api::RepliesController < ApplicationController
     @replies = Reply.all
     render 'index.json.jbuilder'
   end 
+  
+  def show
+    the_id = params[:id]
+    @reply = Reply.find_by(id: the_id)
+    # @reply.created_at = time_ago_in_words(created_at)
+    render 'show.json.jbuilder'
+  end
 
   def create
     @reply = Reply.new(
-      reply: params[:reply]
+      reply: params[:reply],
+      discussion_id: params[:discussion_id],
+      image: params[:image],
+      user_id: current_user.id
+      
       )
     @reply.save!
     render 'show.json.jbuilder'

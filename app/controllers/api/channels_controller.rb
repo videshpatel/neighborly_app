@@ -1,13 +1,21 @@
 class Api::ChannelsController < ApplicationController
+    before_action :authenticate_user, only: [:index, :show, :create, :update, :destroy]
   
   def index
     @channels = Channel.all
     render 'index.json.jbuilder'
   end 
 
+  def show
+    the_id = params[:id]
+    @channel = Channel.find_by(id: the_id)
+    render 'show.json.jbuilder'
+  end
+
   def create
     @channel = Channel.new(
-      channel: params[:channel]
+      channel: params[:channel],
+      discussion_id: params[:discussion_id]
       )
     @channel.save!
     render 'show.json.jbuilder'

@@ -1,0 +1,1 @@
+json.message "The user is deleted from the database."

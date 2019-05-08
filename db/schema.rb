@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_000508) do
+ActiveRecord::Schema.define(version: 2019_05_07_222441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendars", force: :cascade do |t|
+    t.date "date"
+    t.string "title"
+    t.text "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "channels", force: :cascade do |t|
     t.string "channel"
@@ -29,6 +37,15 @@ ActiveRecord::Schema.define(version: 2019_04_28_000508) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "channel_id"
+    t.string "image"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "date"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "desc"
   end
 
   create_table "replies", force: :cascade do |t|
@@ -37,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_000508) do
     t.datetime "updated_at", null: false
     t.integer "discussion_id"
     t.integer "user_id"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +63,13 @@ ActiveRecord::Schema.define(version: 2019_04_28_000508) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "street_1"
+    t.string "street_2"
+    t.string "city"
+    t.string "state"
+    t.integer "postal_code"
+    t.string "country"
   end
 
 end
